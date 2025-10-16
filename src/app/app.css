@@ -12,6 +12,7 @@
 .menu-links {
   display: flex;
   gap: 24px; /* space between menu items */
+  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
 .menu-links a {
