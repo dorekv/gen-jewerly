@@ -8,16 +8,10 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* .menu-logo {
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: #333;
-} */
-
-/* ====== Ссылки ====== */
+/* ====== Menu links ====== */
 .menu-links {
   display: flex;
-  gap: 24px; /* расстояние между пунктами меню */
+  gap: 24px; /* space between menu items */
 }
 
 .menu-links a {
@@ -28,7 +22,7 @@
 }
 
 .menu-links a:hover {
-  color: #007acc;
+  color: #971a9c;
 }
 
 .menu-links a.active {
