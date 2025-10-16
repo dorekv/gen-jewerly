@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "studio-viewer": {
+    "gen-jewelry": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -56,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "studio-viewer:build:production"
+              "buildTarget": "gen-jewelry:build:production"
             },
             "development": {
-              "buildTarget": "studio-viewer:build:development"
+              "buildTarget": "gen-jewelry:build:development"
             }
           },
           "defaultConfiguration": "development"

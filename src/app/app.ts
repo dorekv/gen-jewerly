@@ -9,5 +9,5 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 })
 
 export class App {
-  protected readonly title = signal('studio-viewer');
+  protected readonly title = signal('gen-jewerly');
 }
