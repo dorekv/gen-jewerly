@@ -10,4 +10,11 @@ import { RouterOutlet, RouterLink } from '@angular/router';
 
 export class App {
   protected readonly title = signal('gen-jewerly');
+
+  // menu
+  menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
 }
