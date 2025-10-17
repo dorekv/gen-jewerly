@@ -1,13 +1,14 @@
 <div class="container">
     <div class ="filters">
-        <a class="button">Earrings</a>
-        <a class="button">Necklaces</a>
-        <a class="button">Bracelets</a>
-        <a class="button">Sets</a>
+        <a class="button" (click)="filter='Earrings'">Earrings</a>
+        <a class="button" (click)="filter='Necklaces'">Necklaces</a>
+        <a class="button" (click)="filter='Bracelets'">Bracelets</a>
+        <a class="button" (click)="filter='Sets'">Sets</a>
+        <a class="button" (click)="filter=''">All</a>
     </div>
 
     <ul class="products">
-        <li class="product-item" *ngFor="let product of products">
+        <li class="product-item" *ngFor="let product of getFilteredProducts()">
             <div class="product">
                 <div class="product-details">
                     <img class= "product-image" [src]="getProductImageUrl(product)" [alt]="product.name"/>

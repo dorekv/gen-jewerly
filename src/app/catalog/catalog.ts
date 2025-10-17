@@ -11,10 +11,8 @@ import { IProduct } from './product.model';
 
 export class Catalog {
   products: IProduct[];
+  filter: string = '';
 
-  getProductImageUrl(product: IProduct): string  {
-    return 'assets/images/' + product.imageFileName;
-  }
 
   // =================================
   //          Test data
@@ -84,4 +82,14 @@ export class Catalog {
       }
     ];
   };
+
+  getProductImageUrl(product: IProduct): string  {
+    return 'assets/images/' + product.imageFileName;
+  }
+
+  getFilteredProducts() {
+    return this.filter === '' 
+    ? this.products 
+    : this.products.filter(product => product.category === this.filter);
+  }
 }
