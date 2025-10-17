@@ -113,6 +113,16 @@
   color: #333;
 }
 
+.discounted-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-top: 1px solid #eee;
+  font-weight: 600;
+  color: #e35858;
+}
+
 .cta {
   background: #971a9c;
   color: white;

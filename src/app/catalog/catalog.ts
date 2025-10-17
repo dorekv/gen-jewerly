@@ -37,7 +37,7 @@ export class Catalog {
         name: 'Silver Hoop Earrings',
         imageFileName: 'silver-hoop-earrings.png',
         price: 89.99,
-        discount: 0.15,
+        discount: 0,
         category: 'Earrings'
       },
       {
@@ -57,7 +57,7 @@ export class Catalog {
         name: 'Gold Chain Bracelet',
         imageFileName: 'gold-chain-bracelet.png',
         price: 120.00,
-        discount: 0.25,
+        discount: 0,
         category: 'Bracelets'
       },
       {

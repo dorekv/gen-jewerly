@@ -8,21 +8,31 @@
     </div>
 
     <ul class="products">
-        <li class="product-item" *ngFor="let product of getFilteredProducts()">
-            <div class="product">
-                <div class="product-details">
-                    <img class= "product-image" [src]="getProductImageUrl(product)" [alt]="product.name"/>
-                    <div class="product-info">
-                        <div class="name"> {{product.name }}</div>
-                        <div class="description"> {{product.description}}</div>
-                        <div class="category">Type of: {{product.category}}</div>  
+        @for(product of getFilteredProducts(); track product.id){
+            <li class="product-item">
+                <div class="product">
+                    <div class="product-details">
+                        <img class= "product-image" [src]="getProductImageUrl(product)" [alt]="product.name"/>
+                        <div class="product-info">
+                            <div class="name"> {{product.name }}</div>
+                            <div class="description"> {{product.description}}</div>
+                            <div class="category">Type of: {{product.category}}</div>  
+                        </div>                
+                    </div>
+                    <div class="price">
+                        <!-- Show original price if there is a discount -->
+                        @if(product.discount === 0){
+                            <div>&euro; {{product.price.toFixed(2)}}</div>
+                        }
+                        
+                        <!-- Show discounted price if there is a discount -->
+                        @if(product.discount > 0){
+                            <div class="discounted-price">&euro; {{(product.price * (1 - product.discount)).toFixed(2)}}</div>
+                        }
+                        <button class="cta">Buy</button>
                     </div>                
                 </div>
-                <div class="price">
-                    <div>&euro; {{product.price.toFixed(2)}}</div>
-                    <button class="cta">Buy</button>
-                </div>                
-            </div>
-        </li>
+            </li>
+        }
     </ul>
 </div>
