@@ -20,14 +20,12 @@
                         </div>                
                     </div>
                     <div class="price">
-                        <!-- Show original price if there is a discount -->
-                        @if(product.discount === 0){
-                            <div>&euro; {{product.price.toFixed(2)}}</div>
-                        }
-                        
+                        <!-- Show original price -->
+                        <div>{{product.price | currency:'EUR'}}</div>
+
                         <!-- Show discounted price if there is a discount -->
                         @if(product.discount > 0){
-                            <div class="discounted-price">&euro; {{(product.price * (1 - product.discount)).toFixed(2)}}</div>
+                            <div class="discounted-price"> {{product.price | discountDisplay:product.discount }}</div>
                         }
                         <button class="cta">Buy</button>
                     </div>                

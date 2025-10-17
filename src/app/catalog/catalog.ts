@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IProduct } from './product.model';
+import { DiscountDisplayPipe } from '../pipes/discount-display-pipe';
 
 @Component({
   selector: 'app-catalog',
-  imports: [CommonModule],
+  imports: [CommonModule, DiscountDisplayPipe],
   templateUrl: './catalog.html',
   styleUrl: './catalog.css'
 })
