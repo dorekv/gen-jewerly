@@ -7,10 +7,10 @@
     </div>
 
     <ul class="products">
-        <li class="product-item">
+        <li class="product-item" *ngFor="let product of products">
             <div class="product">
                 <div class="product-details">
-                    <img class= "product-image" src="{{'assets/images/'+product.imageFileName}}" alt="{{product.name}}"/>
+                    <img class= "product-image" [src]="getProductImageUrl(product)" [alt]="product.name"/>
                     <div class="product-info">
                         <div class="name"> {{product.name }}</div>
                         <div class="description"> {{product.description}}</div>
