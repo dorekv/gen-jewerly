@@ -50,6 +50,12 @@
   }
 }
 
+.product.empty {
+  height: 200px; 
+  border: 1px dashed #ccc; 
+  background-color: #f9f9f9;
+}
+
 .product-item {
   background: #fff;
   border-radius: 16px;

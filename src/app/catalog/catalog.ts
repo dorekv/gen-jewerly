@@ -10,7 +10,7 @@ import { IProduct } from './product.model';
 })
 
 export class Catalog {
-  products: IProduct[];
+  products: (IProduct | null)[];
   filter: string = '';
 
 
@@ -29,6 +29,8 @@ export class Catalog {
         discount: 0.2,
         category: 'Necklaces'
       },
+
+      null,
 
       // Earrings
       {
@@ -90,6 +92,6 @@ export class Catalog {
   getFilteredProducts() {
     return this.filter === '' 
     ? this.products 
-    : this.products.filter(product => product.category === this.filter);
+    : this.products!.filter(product => product!.category === this.filter);
   }
 }
