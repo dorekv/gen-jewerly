@@ -1,10 +1,10 @@
 <div class="container">
     <div class ="filters">
-        <a class="button" (click)="filter='Earrings'">Earrings</a>
-        <a class="button" (click)="filter='Necklaces'">Necklaces</a>
-        <a class="button" (click)="filter='Bracelets'">Bracelets</a>
-        <a class="button" (click)="filter='Sets'">Sets</a>
-        <a class="button" (click)="filter=''">All</a>
+        <a class="filter-button" (click)="filter='Earrings'">Earrings</a>
+        <a class="filter-button" (click)="filter='Necklaces'">Necklaces</a>
+        <a class="filter-button" (click)="filter='Bracelets'">Bracelets</a>
+        <a class="filter-button" (click)="filter='Sets'">Sets</a>
+        <a class="filter-button" (click)="filter=''">All</a>
     </div>
 
     <ul class="products">
@@ -21,7 +21,12 @@
                     </div>
                     <div class="price">
                         <!-- Show original price -->
-                        <div>{{product.price | currency:'EUR'}}</div>
+
+                        <!-- Second way -->
+                        <div [ngClass]="{greyed: product.discount > 0}">
+                            <!-- Strikethrough for original price when there is a discount using CSS -->
+                            <div [class.strikethrough]="product.discount > 0">{{product.price | currency:'EUR'}}</div>
+                        </div>
 
                         <!-- Show discounted price if there is a discount -->
                         @if(product.discount > 0){

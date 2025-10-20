@@ -10,6 +10,6 @@ export class DiscountDisplayPipe implements PipeTransform {
     const discountedPrice = price * (1 - discount);
     const discountPercent = Math.round(discount * 100);
 
-    return `→ €${discountedPrice.toFixed(2)} (-${discountPercent}%)`; 
+    return `€${discountedPrice.toFixed(2)} (-${discountPercent}%)`; 
   }
 }
