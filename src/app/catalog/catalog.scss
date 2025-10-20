@@ -1,0 +1,155 @@
+// === Variables ===
+$primary-color: #971a9c;
+$text-grey: #999;
+$text-dark: #333;
+$light-grey: #eee;
+$danger-color: #e35858;
+
+// === Utility classes ===
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.greyed {
+  color: $text-grey;
+}
+
+.pink {
+  color: $primary-color;
+}
+
+// === Layout ===
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+// === Filters section ===
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 30px;
+
+  .filter-button {
+    background: #fff;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &:hover {
+      background: $primary-color;
+      color: white;
+    }
+  }
+}
+
+// === Product grid ===
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  .product-item {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      .product-image {
+        display: block;
+        margin: 20px auto 0 auto;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      .product-info {
+        padding: 16px;
+
+        .name {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: $text-dark;
+          margin-bottom: 6px;
+        }
+
+        .description {
+          font-size: 0.9rem;
+          color: #666;
+          margin-bottom: 8px;
+        }
+
+        .category {
+          font-size: 0.8rem;
+          color: $text-grey;
+        }
+      }
+
+      .price,
+      .discounted-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        border-top: 1px solid $light-grey;
+        font-weight: 600;
+
+        &.price {
+          color: $text-dark;
+        }
+
+        &.discounted-price {
+          color: $danger-color;
+        }
+
+        .cta {
+          background: $primary-color;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          padding: 8px 14px;
+          cursor: pointer;
+          transition: background 0.3s;
+
+          &:hover {
+            background: lighten($primary-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}
