@@ -93,4 +93,12 @@ export class Catalog {
     ? this.products 
     : this.products.filter(product => product.category === this.filter);
   }
+
+  getGreyedTextDeciration(product: IProduct): Array<string> {
+    if(product.discount > 0){
+      return ['greyed'];
+    }
+    
+    return ['pink'];
+  }
 }
