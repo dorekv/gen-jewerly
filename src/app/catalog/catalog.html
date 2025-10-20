@@ -21,9 +21,8 @@
                     </div>
                     <div class="price">
                         <!-- Show original price -->
-
                         <!-- Second way -->
-                        <div [ngClass]="getGreyedTextDeciration(product)">
+                        <div [ngClass]="getTextDecoration(product)">
                             <!-- Strikethrough for original price when there is a discount using CSS -->
                             <div [class.strikethrough]="product.discount > 0">{{product.price | currency:'EUR'}}</div>
                         </div>

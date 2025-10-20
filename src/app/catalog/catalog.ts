@@ -7,7 +7,7 @@ import { DiscountDisplayPipe } from '../pipes/discount-display-pipe';
   selector: 'app-catalog',
   imports: [CommonModule, DiscountDisplayPipe],
   templateUrl: './catalog.html',
-  styleUrl: './catalog.css'
+  styleUrl: './catalog.scss'
 })
 
 export class Catalog {
