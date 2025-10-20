@@ -94,11 +94,11 @@ export class Catalog {
     : this.products.filter(product => product.category === this.filter);
   }
 
-  getGreyedTextDeciration(product: IProduct): Array<string> {
+  getTextDecoration(product: IProduct): Array<string> {
     if(product.discount > 0){
-      return ['greyed'];
+      return ['greyed']; // can be many classes
     }
     
-    return ['pink'];
+    return ['pink']; // can be many classes
   }
 }
