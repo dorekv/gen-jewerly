@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IProduct } from '../catalog/product.model';
 import { DiscountDisplayPipe } from '../pipes/discount-display-pipe';
@@ -12,15 +12,14 @@ import { DiscountDisplayPipe } from '../pipes/discount-display-pipe';
 
 export class ProductDetails {
   @Input() product!: IProduct;
-  cart: IProduct[] = [];
+  @Output() buy = new EventEmitter<IProduct>();
 
   // =================================  
   getProductImageUrl(product: IProduct): string  {
     return 'assets/images/' + product.imageFileName;
   }
 
-  addToCart(product: IProduct): void{
-    this.cart.push(product);
-    console.log(`Product "${product.name}" added to cart. Total items in cart: ${this.cart.length}`);
+  buyButtonClicked(product: IProduct): void{
+    this.buy.emit();
   }  
 }
