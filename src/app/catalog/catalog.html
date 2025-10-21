@@ -29,7 +29,7 @@
                         @if(product.discount > 0){
                             <div class="discounted-price"> {{product.price | discountDisplay:product.discount }}</div>
                         }
-                        <button class="cta">Buy</button>
+                        <button class="cta" (click)="addToCart(product)">Buy</button>
                     </div>                
                 </div>
             </li>

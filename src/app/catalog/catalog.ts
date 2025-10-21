@@ -13,6 +13,7 @@ import { DiscountDisplayPipe } from '../pipes/discount-display-pipe';
 export class Catalog {
   products: IProduct[];
   filter: string = '';
+  cart: IProduct[] = [];
 
 
   // =================================
@@ -92,5 +93,10 @@ export class Catalog {
     return this.filter === '' 
     ? this.products 
     : this.products.filter(product => product.category === this.filter);
+  }
+
+  addToCart(product: IProduct): void{
+    this.cart.push(product);
+    console.log(`Product "${product.name}" added to cart. Total items in cart: ${this.cart.length}`);
   }
 }
