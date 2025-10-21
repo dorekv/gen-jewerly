@@ -110,17 +110,15 @@
   padding: 16px;
   border-top: 1px solid #eee;
   font-weight: 600;
-  /* color: #333; */
 }
 
 .grayPrice{
-  color: #6b6b6b;              /* серый цвет текста */
+  color: #6b6b6b;
   text-decoration: line-through;
   text-decoration-color: #6b6b6b;
-  text-decoration-thickness: 1px; /* толщина линии (поддерживается в современных браузерах) */
-  text-decoration-skip-ink: none; /* чтобы линия не прерывалась на изгибах букв */
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: none;
 }
-
 
 .pinkPrice{
   color: #971a9c;

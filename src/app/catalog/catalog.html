@@ -22,7 +22,7 @@
                     <div class="price">
                         <!-- Show original price -->
                         <div [ngClass]="product.discount > 0 ? 'grayPrice' : 'pinkPrice'">
-                             {{ product.price | currency:'EUR' }}
+                            {{ product.price | currency:'EUR' }}
                         </div>
                         
                         <!-- Show discounted price if there is a discount -->
