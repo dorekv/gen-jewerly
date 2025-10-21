@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IProduct } from './product.model';
 import { DiscountDisplayPipe } from '../pipes/discount-display-pipe';
+import { ProductDetails } from '../product-details/product-details';
 
 @Component({
   selector: 'app-catalog',
-  imports: [CommonModule, DiscountDisplayPipe],
+  imports: [CommonModule, DiscountDisplayPipe, ProductDetails],
   templateUrl: './catalog.html',
   styleUrl: './catalog.css'
 })
@@ -14,7 +15,6 @@ export class Catalog {
   products: IProduct[];
   filter: string = '';
   cart: IProduct[] = [];
-
 
   // =================================
   //          Test data
@@ -83,11 +83,7 @@ export class Catalog {
         category: 'Sets'
       }
     ];
-  };
-
-  getProductImageUrl(product: IProduct): string  {
-    return 'assets/images/' + product.imageFileName;
-  }
+  }; 
 
   getFilteredProducts() {
     return this.filter === '' 

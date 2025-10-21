@@ -1,1 +1,23 @@
-<p>product-details works!</p>
+<div class="product">
+    <div class="product-details">
+        <img class= "product-image" [src]="getProductImageUrl(product)" [alt]="product.name"/>
+        <div class="product-info">
+            <div class="name"> {{product.name }}</div>
+            <div class="description"> {{product.description}}</div>
+            <div class="category">Type of: {{product.category}}</div>  
+        </div>                
+    </div>
+    <div class="price">
+        <!-- Show original price -->
+        <div [ngClass]="product.discount > 0 ? 'grayPrice' : 'pinkPrice'">
+            {{ product.price | currency:'EUR' }}
+        </div>
+        
+        <!-- Show discounted price if there is a discount -->
+        @if(product.discount > 0){
+            <div class="discounted-price"> {{product.price | discountDisplay:product.discount }}</div>
+        }
+        
+        <button class="cta" (click)="addToCart(product)">Buy</button>
+    </div>                
+</div>
