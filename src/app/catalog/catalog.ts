@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IProduct } from './product.model';
 import { ProductDetails } from '../product-details/product-details';
+import { CartService } from '../cart-service';
 
 @Component({
   selector: 'app-catalog',
@@ -13,7 +14,17 @@ import { ProductDetails } from '../product-details/product-details';
 export class Catalog {
   products: IProduct[];
   filter: string = '';
-  cart: IProduct[] = [];
+  private cartService: CartService = new CartService();
+
+  getFilteredProducts() {
+    return this.filter === '' 
+    ? this.products 
+    : this.products.filter(product => product.category === this.filter);
+  }
+  
+  addToCart(product: IProduct): void{
+    this.cartService.add(product);
+  }
 
   // =================================
   //          Test data
@@ -82,16 +93,5 @@ export class Catalog {
         category: 'Sets'
       }
     ];
-  }; 
-
-  getFilteredProducts() {
-    return this.filter === '' 
-    ? this.products 
-    : this.products.filter(product => product.category === this.filter);
-  }
-
-  addToCart(product: IProduct): void{
-    this.cart.push(product);
-    console.log(`Product "${product.name}" added to cart. Total items in cart: ${this.cart.length}`);
-  }
+  };
 }
