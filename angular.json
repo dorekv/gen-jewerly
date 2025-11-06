@@ -60,10 +60,11 @@
               "buildTarget": "gen-jewelry:build:production"
             },
             "development": {
-              "buildTarget": "gen-jewelry:build:development"
+              "buildTarget": "gen-jewelry:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"
