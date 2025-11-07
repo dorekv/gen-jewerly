@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { IProduct } from './product.model';
 import { ProductDetails } from '../product-details/product-details';
-import { CartService } from '../cart-service';
-import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { CartService } from '../services/cart-service';
+import { ProductService } from '../services/product-service';
 
 @Component({
   selector: 'app-catalog',
@@ -17,24 +16,18 @@ import { of } from 'rxjs';
 export class Catalog {
   products: IProduct[] = [];
   filter: string = '';
-  private cartService: CartService = new CartService();
-  private apiUrl = 'http://localhost:8081/api/catalog';
 
-  constructor(private http: HttpClient) {}
-
-  ngOnInit(): void {
-    // Load products from the Node.js API
-    this.http.get<IProduct[]>(this.apiUrl)
-      .pipe(
-        catchError((error) => {
-          console.error('❌ Error loading catalog:', error);
-          return of([]); // Return empty array if request fails
-        })
-      )
-      .subscribe((data) => {
-        this.products = data;
-      });
+  constructor(
+    private productSvs: ProductService,  
+    private cartService: CartService, 
+    private http: HttpClient) {
   }
+
+  ngOnInit(): void{
+    this.productSvs.getProducts().subscribe(products => {
+      this.products = products;
+    });
+  }    
 
   getFilteredProducts() {
     return this.filter === '' 

@@ -2,7 +2,8 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { About } from './about/about';
 import { Catalog } from './catalog/catalog';
-import { Contacts } from './contacts/contacts'; 
+import { Contacts } from './contacts/contacts';
+import { HttpClient } from '@angular/common/http';
 
 export const routes: Routes = [
   { path: '', component: Home },           // deafault 
