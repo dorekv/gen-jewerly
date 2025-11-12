@@ -3,6 +3,7 @@ import { Home } from './home/home';
 import { About } from './about/about';
 import { Catalog } from './catalog/catalog';
 import { Contacts } from './contacts/contacts';
+import { Cart } from './cart/cart';
 import { HttpClient } from '@angular/common/http';
 
 export const routes: Routes = [
@@ -10,5 +11,6 @@ export const routes: Routes = [
   { path: 'home', component: Home },
   { path: 'about', component: About },
   { path: 'catalog', component: Catalog },
-  { path: 'contacts', component: Contacts }
+  { path: 'contacts', component: Contacts },
+  { path: 'cart', component: Cart }
 ];
