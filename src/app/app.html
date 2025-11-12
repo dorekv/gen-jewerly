@@ -2,11 +2,11 @@
   <button class="menu-toggle" (click)="toggleMenu()">☰</button>
 
   <div class="menu-links" [class.open]="menuOpen">
-    <a routerLink="/home" routerLinkActive="active">Home</a>
-    <a routerLink="/catalog" routerLinkActive="active">Catalog</a>
-    <a routerLink="/about" routerLinkActive="active">About</a>
-    <a routerLink="/contacts" routerLinkActive="active">Contacts</a>
-    <a routerLink="/cart" routerLinkActive="active">Cart</a>
+    <a routerLink="/home" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/catalog" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Catalog</a>
+    <a routerLink="/about" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">About</a>
+    <a routerLink="/contacts" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Contacts</a>
+    <a routerLink="/cart" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Cart</a>
   </div>
 </nav>
 
