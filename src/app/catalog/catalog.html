@@ -1,10 +1,10 @@
 <div class="container">
-    <div class ="filters">
-        <a class="button" (click)="filter='Earrings'">Earrings</a>
-        <a class="button" (click)="filter='Necklaces'">Necklaces</a>
-        <a class="button" (click)="filter='Bracelets'">Bracelets</a>
-        <a class="button" (click)="filter='Sets'">Sets</a>
-        <a class="button" (click)="filter=''">All</a>
+    <div class="filters">
+        <a class="button" [routerLink]="['/catalog', 'Earrings']">Earrings</a>
+        <a class="button" [routerLink]="['/catalog', 'Necklaces']">Necklaces</a>
+        <a class="button" [routerLink]="['/catalog', 'Bracelets']">Bracelets</a>
+        <a class="button" [routerLink]="['/catalog', 'Sets']">Sets</a>
+        <a class="button" [routerLink]="['/catalog', 'All']">All</a>
     </div>
 
     <ul class="products">
