@@ -1,0 +1,12 @@
+<div class="container"> 
+    <form class="form" (ngSubmit)="signIn()"> 
+        <img class="logo" src="/assets/logo.png" width="220" height="120" alt="GenJewelry Logo"/>
+        <div class="sign-in">Sign In</div>
+        <div class="sub-text">to acquire awesome jewerly</div>
+        <p><input name="email"    [(ngModel)]="credentials.email"    placeholder="Email Address" type="text"     required></p>
+        <p><input name="password" [(ngModel)]="credentials.password" placeholder="Password"      type="password" required></p>
+        <div class="buttons"> 
+            <button type="submit" class="button cta">Sign In</button>
+        </div>
+    </form>
+</div>

@@ -4,6 +4,7 @@ import { About } from './about/about';
 import { Catalog } from './catalog/catalog';
 import { Contacts } from './contacts/contacts';
 import { Cart } from './cart/cart';
+import { SignIn } from './sign-in/sign-in';
 
 export const routes: Routes = [
   { path: '', component: Home },  // deafault 
@@ -12,5 +13,6 @@ export const routes: Routes = [
   { path: 'catalog', component: Catalog },
   { path: 'catalog/:filter', component: Catalog },
   { path: 'contacts', component: Contacts },
-  { path: 'cart', component: Cart }
+  { path: 'cart', component: Cart },
+  { path: 'sign-in', component: SignIn }
 ];

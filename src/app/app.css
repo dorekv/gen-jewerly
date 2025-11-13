@@ -11,8 +11,16 @@
 /* ====== Menu links ====== */
 .menu-links {
   display: flex;
-  gap: 24px; /* space between menu items */
-  font-family: 'Segoe UI', Tahoma, sans-serif;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-links,
+.right-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .menu-links a {
