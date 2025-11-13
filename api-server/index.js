@@ -46,9 +46,9 @@ app.get('/api/cart', (req, res) => {
 // ==============================
 
 // Test credentials data
-const users = [
-    { name: 'John', surname: 'Doe', email: 'john.doe@gmail.com', password: 'qw123'},
-    { name: 'Jane', surname: 'Smith', email: 'jane.smith@ya.ru', password: 'er456'}
+  const users = [
+    { name: 'John', surname: 'Doe', email: 'john.doe@example.com', password: 'test-password-1' },
+    { name: 'Jane', surname: 'Smith', email: 'jane.smith@example.com', password: 'test-password-2' }
   ];
 
   // get/ post
