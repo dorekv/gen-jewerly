@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
   styleUrl: './sign-in.css'
 })
 export class SignIn {
+  signInError: boolean = false;
+
   credentials: IUserCredntials = {
     email: '',
     password: ''
@@ -21,10 +23,11 @@ export class SignIn {
   }
 
   signIn(): void {
+    this.signInError = false;
+
     this.userService.signIn(this.credentials).subscribe({
-      next: () => {
-        this.router.navigate(['/catalog']);
-      }
+      next: () => ( this.router.navigate(['/catalog']) ),
+      error: () => ( this.signInError = true )
     });    
     
     console.log('Signing in with', this.credentials);

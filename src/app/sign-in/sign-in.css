@@ -62,15 +62,20 @@
 
 .buttons {
   margin-top: 10px;
+  margin-bottom: 18px;
+  margin-left: 9%;
 }
 
 .button.cta {
-  width: 100%;
+  width: 90%;
+  padding: 12px 14px;
+  
+  align-self: center;
+
   background-color: #971a9c;
   color: #fff;
   border: none;
   border-radius: 10px;
-  padding: 12px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -83,4 +88,41 @@
 
 .button.cta:active {
   transform: scale(0.98);
+}
+
+.error-message {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #ffe6ef;       /* нежно-розовый фон */
+  color: #b1004b;                  /* насыщенный розово-красный текст */
+  border: 1px solid #ffb6c1;       /* мягкая рамка */
+  border-radius: 10px;
+  margin-top: 15px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(151, 26, 156, 0.08);
+  animation: fadeIn 0.4s ease;
+}
+
+/* Анимация плавного появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Для светлого emoji "❌" можно чуть подвинуть */
+.error-message::before {
+  content: '';
 }
