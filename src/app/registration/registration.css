@@ -1,0 +1,185 @@
+/* Контейнер */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(145deg, #f8f4f9, #fff);
+  padding: 20px;
+}
+
+/* Форма */
+.form {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 420px;
+  width: 100%;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(151, 26, 156, 0.15);
+}
+
+/* Отдельный контрол */
+.control {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+/* Лейблы */
+.control label {
+  display: block;
+  font-weight: 600;
+  color: #971a9c;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+/* INPUT + SELECT */
+.control input,
+.control select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fafafa;
+  font-size: 0.95rem;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s;
+  margin-bottom: 8px;
+}
+
+.control input:focus,
+.control select:focus {
+  border-color: #971a9c;
+  box-shadow: 0 0 0 2px rgba(151, 26, 156, 0.2);
+  background-color: #fff;
+}
+
+/* RADIO GROUP */
+.control .radio-group {
+  display: flex;
+  gap: 20px;
+  padding: 10px 2px;
+}
+
+/* Стилизация радио-кнопок */
+.control input[type="radio"] {
+  accent-color: #971a9c;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.control input[type="radio"] + span {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Блок Value / Type */
+.control .result-box {
+  padding: 10px 14px;
+  background: #fafafa;
+  border-left: 3px solid #971a9c;
+  border-radius: 8px;
+  color: #555;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(151, 26, 156, 0.06);
+  margin-top: 6px;
+}
+
+/* Убираем стандартные отступы p */
+.control p {
+  margin: 0;
+}
+
+/* Кнопка */
+.button.cta {
+  width: 90%;
+  padding: 12px 14px;
+  background-color: #971a9c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  align-self: center;
+}
+
+.button.cta:hover {
+  background-color: #b03dbc;
+}
+
+.button.cta:active {
+  transform: scale(0.98);
+}
+
+.button.cta:disabled {
+  background-color: #d9b6dd;
+  cursor: not-allowed;
+}
+
+/* Контейнер для checkbox и текста */
+.control .checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* Скрываем стандартный checkbox */
+.control input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  background-color: #fafafa;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* Состояние hover */
+.control input[type="checkbox"]:hover {
+  border-color: #971a9c;
+  box-shadow: 0 0 0 2px rgba(151, 26, 156, 0.1);
+}
+
+/* Состояние checked */
+.control input[type="checkbox"]:checked {
+  background-color: #971a9c;
+  border-color: #971a9c;
+}
+
+/* Галочка через псевдоэлемент */
+.control input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Текст рядом с checkbox */
+.control label.checkbox-label {
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+}
+

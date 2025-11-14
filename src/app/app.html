@@ -13,7 +13,8 @@
       <a routerLink="/cart" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Cart</a>
 
       @if(!user){
-        <a routerLink="/sign-in" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Sign In</a>        
+        <a routerLink="/sign-in" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Sign In</a>
+        <a routerLink="/registration" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Registration</a>        
       } @else {
         <img src="/assets/profile.png" (click)="toggleSignOutMenu()" width="60" height="35" alt="User Icon"/>
         @if(showSignOutMenu){

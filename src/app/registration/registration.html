@@ -1,0 +1,54 @@
+<div class="container">
+    <form #registrationForm="ngForm" class="form" (ngSubmit)="registreMe()"> 
+        <div class="control">
+            <label>Full name:</label>
+            <p><input name="nameTextInput" type="text" [(ngModel)]="nameTextInput" title="Your name and surname" required/></p>
+            <!-- <p><div>Value: {{nameTextInput}}. Type: {{getType(nameTextInput)}} </div> -->
+        </div>
+
+         <div class="control">
+            <label>Gender:</label>
+                <div>
+                    <input name="genderRadioInput" type="radio" [value]="1" [(ngModel)]="radioInput" required/>Female
+                    <input name="genderRadioInput" type="radio" [value]="2" [(ngModel)]="radioInput"/>Male                    
+                </div>
+                <!-- <p><div>Value: {{radioInput}}. Type: {{getType(radioInput)}} </div> -->
+        </div>
+
+        <div class="control">
+            <label>Birthday year:</label>
+            <p> 
+                <select name="numericSelect" type="numericSelect" [(ngModel)]="numericSelect" required>
+                    <option [ngValue]="2000">2000</option>
+                    <option [ngValue]="2001">2001</option>
+                </select>
+                <!-- <p><div>Value: {{numericSelect}}. Type: {{getType(numericSelect)}} </div> -->
+        </div>
+
+        <div class="control">
+            <label>Phone:</label>
+            <p><input name="phoneNumberInput" type="number" [(ngModel)]="numericInput" title="*with country code, but with no + in the beggining" required/></p>
+            <!-- <p><div>Value: {{numericInput}}. Type: {{getType(numericInput)}} </div> -->
+        </div>
+
+        <div class="control">
+            <label>City:</label>
+            <p> 
+                <select name="citySelect" type="select" [(ngModel)]="stringInput" required>
+                    @for(city of citySelectOptions; track city){
+                        <option [value]="city.value"> {{city.text}}</option>
+                    }
+                </select>
+                <!-- <p><div>Value: {{stringInput}}. Type: {{getType(stringInput)}} </div> -->
+        </div>
+        
+        <div class="checkbox">             
+            <p><input name="policyCheckbox" type="checkbox" [(ngModel)]="checkboxInput"/> I agree with the <b>Policy</b></p>
+            <!-- <p><div>Value: {{checkboxInput}}. Type: {{getType(checkboxInput)}} </div> -->
+        </div>
+        
+        <div class="buttons">             
+            <button type="submit" class="button cta" [disabled]="!checkboxInput || registrationForm.invalid">Register me!</button>
+        </div>
+    </form>
+</div>
