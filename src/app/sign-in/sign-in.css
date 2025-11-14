@@ -90,6 +90,10 @@
   transform: scale(0.98);
 }
 
+em.error{
+    color: #b1004b;
+}
+
 .error-message {
   width: 100%;
   padding: 12px 14px;
