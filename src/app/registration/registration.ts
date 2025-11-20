@@ -36,8 +36,6 @@ getType(value: any ): string {
   return typeof value;
 }
 
-registreMe(): void{
-
-}
+registreMe(): void{}
 
 }
